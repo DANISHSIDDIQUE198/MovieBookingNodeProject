@@ -39,9 +39,9 @@ function verifyToken(req,res,next){
      req.token=bearer[1];
      jwt.verify(req.token, jwtKey, (err, authData)=>{
          if(err){
-             res.json({result: err})
+             res.json({result: err});
          }
-         else{
+         else{ 
              next();
          }
      })
